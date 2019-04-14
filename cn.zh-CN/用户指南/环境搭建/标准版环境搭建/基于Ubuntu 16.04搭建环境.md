@@ -32,7 +32,7 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
 2.  按照运行环境检查工具的提示在您的机器上安装所有必需的依赖项，当检查工具成功运行完成后，返回如下图信息，表示Link IoT Edge能够在您的机器上成功运行。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155505559538243_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155525151938243_zh-CN.png)
 
 
 ## 创建边缘实例和网关 {#section_xzy_nxm_lgb .section}
@@ -44,13 +44,13 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559537158_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525151937158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品功能继承物联网平台 **设备管理** \> **产品**中，高级版产品的功能。已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559537159_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525151937159_zh-CN.png)
 
         参数说明如下：
 
@@ -75,7 +75,7 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559537160_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525151937160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -95,11 +95,11 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
 1.  在左侧导航栏中选择**边缘计算** \> **边缘实例**，单击实例名称右侧的**下载**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559544201_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525151944201_zh-CN.png)
 
 2.  根据环境设置下载参数，然后单击**生成命令**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155505559544200_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155525152044200_zh-CN.png)
 
     |参数|描述|
     |--|--|
@@ -109,7 +109,7 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
 3.  复制Linux 操作系统命令备用。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155505559544205_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155525152044205_zh-CN.png)
 
 4.  登录您的x86\_64 Ubuntu 16.04机器。
 5.  任意目录下执行步骤3中已复制的命令。
@@ -118,7 +118,7 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
     **说明：** 如果不是第一次安装启动Link IoT Edge，可使用已下载的link-iot-edge-standard.sh脚本，对Link IoT Edge进行重启、停止、获取状态、修改配置参数等操作，命令详情请见下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559644213_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525152044213_zh-CN.png)
 
 6.  执行如下命令查看Link IoT Edge核心服务的运行状态。
 
@@ -128,21 +128,21 @@ Link IoT Edge标准版软件包支持在Ubuntu 16.04 ~ Ubuntu 18.04系统上运�
 
     若系统显示如下信息，表示Link IoT Edge核心服务启动成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155505559644214_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155525152044214_zh-CN.png)
 
     您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，查看网关状态。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155505559637203_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155525152037203_zh-CN.png)
 
 7.  在实例详情页面中，查看CPU使用率、内存使用率、存储使用率以及实例进程需要授权访问阿里云云监控（CloudMonitor）服务。
     1.  请参考[云资源访问](../cn.zh-CN/用户指南/云资源访问.md#)内容，在[RAM控制台](https://ram.console.aliyun.com)，创建授信**IoT物联网**的服务角色，并为该角色添加名为**AliyunCloudMonitorFullAccess**的访问云监控服务的权限。
     2.  在**实例信息**页签下打开**云监控状态**，如下图所示。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559637199_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525152037199_zh-CN.png)
 
     3.  在实例进程后，单击**查看**，可查看实例各个进程的信息及CPU、内存使用率。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155505559637200_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155525152037200_zh-CN.png)
 
 8.  您可以在**实例详情**页面，网关名称右侧的操作栏中单击**远程连接**或者**远程文件管理**，方便您远程控制网关设备或对网关设备上的文件进行管理。详细说明请参见[远程服务访问](../cn.zh-CN/用户指南/远程运维管理/远程服务访问.md#)。
 
