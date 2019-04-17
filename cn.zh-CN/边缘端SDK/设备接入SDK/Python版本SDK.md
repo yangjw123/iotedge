@@ -10,11 +10,11 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
     pip3 install lethingaccesssdk
     ```
 
-    **说明：** 您也可以通过物联网边缘计算提供的[开发工具](../../../../../cn.zh-CN/用户指南/函数计算/开发工具/更多用法.md#)使用该SDK来开发驱动。
+    **说明：** 您也可以通过物联网边缘计算提供的[开发工具](../../../../cn.zh-CN/用户指南/函数计算/开发工具/更多用法.md#)使用该SDK来开发驱动。
 
 2.  安装完成后，您可以根据SDK接口进行驱动开发。
 
-    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[驱动开发](../../../../../cn.zh-CN/用户指南/设备接入/驱动开发.md#)。
+    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[驱动开发](../../../../cn.zh-CN/用户指南/设备接入/驱动开发.md#)。
 
     使用SDK开发驱动的示例代码片段如下所示：
 
@@ -24,14 +24,11 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
     import time
     import lethingaccesssdk
     from threading import Timer
-    
-    
     # Base on device, User need to implement the getProperties, setProperties and callService function.
     class Temperature_device(lethingaccesssdk.ThingCallback):
         def __init__(self):
             self.temperature = 41
             self.humidity = 80
-    
         def getProperties(self, input_value):
             '''
             Get properties from the physical thing and return the result.
@@ -43,7 +40,6 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
                 "humidity": 80
             }
             return 0, retDict
-    
         def setProperties(self, input_value):
             '''
             Set properties to the physical thing and return the result.
@@ -51,7 +47,6 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
             :return:
             '''
             return 0, {}
-    
         def callService(self, name, input_value):
             '''
             Call services on the physical thing and return the result.
@@ -60,8 +55,6 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
             :return:
             '''
             return 0, {}
-    
-    
     def thing_behavior(client, app_callback):
         while True:
             properties = {"temperature": app_callback.temperature,
@@ -69,7 +62,6 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
             client.reportProperties(properties)
             client.reportEvent("high_temperature", {"temperature": 41})
             time.sleep(2)
-    
     try:
         infos = lethingaccesssdk.Config().getThingInfos()
         for info in infos:
@@ -80,18 +72,37 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
             t.start()
     except Exception as e:
         logging.error(e)
-    
     # don't remove this function
     def handler(event, context):
         return 'hello world'
     ```
 
 
-## getConfig\(\) {#section_nmq_stg_chb .section}
+## Config {#section_ls8_zqb_48b .section}
 
-获取驱动相关配置信息。
+驱动相关配置信息。
 
-返回值为驱动配置信息。
+**Config\(\)**
+
+基于当前驱动配置字符串构造新的Config对象。
+
+**getThingInfos\(\)**
+
+返回所有设备相关信息。
+
+返回值说明如下：
+
+返回设备用于连接Link IoT Edge的配置信息的封装。
+
+|名称|类型|描述|
+|--|--|--|
+|ThingInfo|List|设备信息。|
+
+|名称|类型|描述|
+|--|--|--|
+|productKey|String|产品唯一标识。|
+|deviceName|String|设备名称。|
+|custom|Object|设备自定义配置。|
 
 ## ThingCallback {#section_jyj_lgq_kfb .section}
 
@@ -210,12 +221,11 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 **reportProperties\(properties\)**
 
-主动上报设备事件。
+主动上报设备属性。
 
 |名称|类型|描述|
 |--|--|--|
-|eventName|String|事件对应的名称，与您在产品定义中创建事件的名称一致。|
-|args|Dict|事件中包含的属性key与value，取值格式为： ```
+|properties|Dict|属性中包含的属性key与value，取值格式为： ```
 {
     "key1": "value1", 
     "key2": "value2"
@@ -226,11 +236,12 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 **reportEvent\(eventName, args\)**
 
-主动上报设备属性。
+主动上报设备事件。
 
 |名称|类型|描述|
 |--|--|--|
-|properties|Dict|属性中包含的属性key与value，取值格式为： ```
+|eventName|String|事件对应的名称，与您在产品定义中创建事件的名称一致。|
+|args|Dict|事件中包含的属性key与value，取值格式为： ```
 {
     "key1": "value1", 
     "key2": "value2"
@@ -265,29 +276,9 @@ TSL字符串
 
 移除设备和网关的绑定关系。请谨慎使用该接口。
 
-## Config {#section_az2_wdh_chb .section}
+## getConfig\(\) {#section_3dv_655_mqr .section}
 
-驱动相关配置信息。
+获取驱动相关配置信息。
 
-**Config\(\)**
-
-基于当前驱动配置字符串构造新的Config对象。
-
-**getThingInfos\(\)**
-
-返回所有设备相关信息。
-
-返回值说明如下：
-
-返回设备用于连接Link IoT Edge的配置信息的封装。
-
-|名称|类型|描述|
-|--|--|--|
-|ThingInfo|List|设备信息。|
-
-|名称|类型|描述|
-|--|--|--|
-|productKey|String|产品唯一标识。|
-|deviceName|String|设备名称。|
-|custom|Object|设备自定义配置。|
+返回值为驱动配置信息。
 
