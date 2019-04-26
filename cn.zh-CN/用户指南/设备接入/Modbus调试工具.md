@@ -4,10 +4,10 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
 ## 前提条件 {#section_ozz_53n_jhb .section}
 
--   请您确保已根据[环境搭建](cn.zh-CN/用户指南/使用示例/创建网关.md#)内容创建完成边缘实例。
+-   请您确保已根据[环境搭建](cn.zh-CN/用户指南/环境搭建/专业版环境搭建/基于Ubuntu 16.04搭建环境.md#)内容创建完成边缘实例。
 -   根据[官方驱动](cn.zh-CN/用户指南/设备接入/官方驱动.md#)中Modbus驱动使用步骤，为边缘实例中的Modbus子设备设置驱动配置。如下图示例所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155539347344162_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155624966544162_zh-CN.png)
 
 
 ## 操作步骤 {#section_c32_rnn_jhb .section}
@@ -19,13 +19,13 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
 3.  在实例详情页面，选择**子设备通信通道** \> **Modbus**，单击通道名称右侧的**调试**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155539347344172_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155624966644172_zh-CN.png)
 
 4.  选择希望调试的子设备。
 5.  在通信通道调试页面，单击**添加属性点**，配置调试。
     -   线圈配置参数说明如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155539347444174_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155624966844174_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
@@ -51,7 +51,7 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
     -   寄存器配置参数说明如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155539347444177_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/155624966844177_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
