@@ -8,7 +8,7 @@ Connector架构模式目前只适用于Node.js和Python的设备接入SDK。
 
 Connector模式架构图如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135370/155313872140270_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135370/155702259940270_zh-CN.png)
 
 在Connector架构模式中，驱动程序由4个部分组成：
 
@@ -33,13 +33,15 @@ Connector组件是Connector架构中最重要的组件，它通过组合的方�
 
 UML类图如下所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135370/155313872140278_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135370/155702259940278_zh-CN.png)
 
 ## 操作步骤 {#section_drv_tc1_1hb .section}
 
+下文示例使用Node.js版本设备接入SDK实现Connector架构模式。关于Python版本示例及详细信息可参考[Python版本](https://github.com/aliyun/linkedge-thing-access-sdk-python/tree/master)。
+
 **Light**
 
-本示例演示一个模拟灯的驱动程序设计，更多详细信息可参考[Python版本](https://github.com/aliyun/linkedge-thing-access-sdk-python/tree/master)。
+本示例演示一个模拟灯的驱动程序设计。
 
 1.  抽象模拟灯类。通过设置isOn属性的true和false来标识模拟灯的开和关。
 
