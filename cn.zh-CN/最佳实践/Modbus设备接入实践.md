@@ -2,8 +2,6 @@
 
 本文介绍如何将基于Modbus协议的设备接入网关，并与物联网平台交互的方法。
 
-仅支持使用Link IoT Edge专业版（LE Pro），实现Modbus设备接入。
-
 本文描述，使用官方Modbus驱动接入Modbus设备的操作。您也可以使用自定义的Modbus驱动，但在物联网平台创建设备所属产品时，接入网关的协议必须选择自定义。自定义驱动相关内容可参考[驱动开发](../../../../cn.zh-CN/用户指南/设备接入/驱动开发.md#)。
 
 1.  以阿里云账号登录[物联网控制台](http://iot.console.aliyun.com/)。
@@ -11,7 +9,7 @@
 3.  创建基于Modbus协议的设备。 
     1.  参考[创建产品](../../../../cn.zh-CN/用户指南/产品与设备/创建产品.md#)，创建环境监测产品。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198512609_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412609_zh-CN.png)
 
         其中， 部分参数按如下设置：
 
@@ -23,17 +21,17 @@
 
     2.  创建完成环境监测产品后，进入产品详情页，开启动态注册。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198512610_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412610_zh-CN.png)
 
     3.  参考[新增物模型](../../../../cn.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)，在产品详情页，为环境监测产品添加物模型。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198612616_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412616_zh-CN.png)
 
     4.  单击**扩展描述**。 
 
         在配置物模型属性的过程中，需要把每个属性通过**扩展描述**中的功能映射到Modbus中的寄存器地址，官方Modbus驱动会将所有的属性聚合为Modbus数据请求，驱动收到Modbus数据之后再转换为物模型数据。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198613958_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324413958_zh-CN.png)
 
         |名称|描述|
         |--|--|
@@ -62,38 +60,38 @@
 
     5.  参考[单个创建设备](../../../../cn.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)，添加环境监测设备。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198612617_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412617_zh-CN.png)
 
-4.  配置子设备通道。 
-    1.  参考[子设备通道管理](../../../../cn.zh-CN/用户指南/产品与设备/网关与子设备/子设备通道管理.md#)，为网关添加Modbus通道。 
+4.  参考[子设备通信通道](../../../../cn.zh-CN/用户指南/设备接入/子设备通信通道.md#)，为网关添加Modbus通道。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198612621_zh-CN.png)
-
-    2.  参考[子设备管理](../../../../cn.zh-CN/用户指南/产品与设备/网关与子设备/子设备管理.md#)，为网关添加子设备，关联Modbus通道。 
-
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198712622_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412621_zh-CN.png)
 
 5.  配置边缘实例。 
     1.  分配环境监测设备到实例中。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198712624_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412624_zh-CN.png)
 
     2.  分配子设备成功后，为子设备配置Modbus驱动。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198712623_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324412623_zh-CN.png)
 
-        其中，从站号设置为2。
+        |参数|描述|
+        |--|--|
+        |选择驱动|选择**Modbus**官方驱动，根据您网关设备适用的语言和CPU架构，选择合适的**Modbus**驱动。|
+        |选择通道|选择已创建的Modbus通道。|
+        |从站号|用来标识Modbus设备在总线上的地址。本示例设置为2。|
+        |数据采集间隔|设置该子设备下所有数据点的采集间隔。本示例可使用默认值。|
 
     3.  参考[设置消息路由](../../../../cn.zh-CN/用户指南/消息路由/设置消息路由.md#)，配置边缘实例消息路由。 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198712625_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324512625_zh-CN.png)
 
 6.  重新部署边缘实例。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198712626_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324512626_zh-CN.png)
 
 7.  在**设备管理** \> **设备**页面，查看设备是否在线。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155564198712627_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21692/155713324512627_zh-CN.png)
 
 
