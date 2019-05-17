@@ -15,13 +15,13 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773419937158_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587737158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773419937159_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587737159_zh-CN.png)
 
         参数说明如下：
 
@@ -46,7 +46,7 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773419937160_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587837160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -63,11 +63,11 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 3.  实例参数设置完成后，单击**确定**，至此您已创建边缘实例和网关。
 4.  在**实例详情** \> **实例信息**页面，网关页签下，单击网关名称右侧的查看，获取网关设备信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773419937161_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587837161_zh-CN.png)
 
     系统跳转到网关设备的设备详情页面，在设备详情页面获取网关设备的设备证书（ProductKey、DeviceName、DeviceSecret），用于后续启动Link IoT Edge。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773419937164_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587837164_zh-CN.png)
 
 
 ## 启动Link IoT Edge {#section_qbn_hyb_bhb .section}
@@ -75,15 +75,15 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 1.  以阿里云账号登录 [Cloud Shell](https://shell.aliyun.com/)。
 2.  在授权提示窗口中，单击**确认**授权Cloud Shell获取临时的会话访问密钥。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155773419940466_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840466_zh-CN.png)
 
 3.  在挂载存储空间提示窗口中，选择**暂不创建**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155773419940467_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840467_zh-CN.png)
 
     等待15 ~ 30秒后系统成功登录Cloud Shell，操作界面如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155773419940399_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840399_zh-CN.png)
 
 4.  执行如下命令，查看Cloud Shell运行环境的CPU。
 
@@ -91,7 +91,7 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
     cat /proc/cpuinfo
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155773419940400_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840400_zh-CN.png)
 
     CPU为Intel E5-2682，因此使用Link IoT Edge标准版（LE Standard）x86\_64架构安装包。
 
@@ -139,21 +139,21 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
     若系统显示如下信息，表示Link IoT Edge核心服务启动成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155773420040402_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587940402_zh-CN.png)
 
     您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择**边缘计算** \> **边缘实例**，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，查看网关状态。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155773420037203_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155807587937203_zh-CN.png)
 
 10. （可选）在实例详情页面，查看CPU使用率、内存使用率、存储使用率以及实例进程需要授权访问阿里云云监控（CloudMonitor）服务。
     1.  请参考[云资源访问](../cn.zh-CN/用户指南/云资源访问.md#)内容，在[RAM控制台](https://ram.console.aliyun.com)，创建授信**IoT物联网**的服务角色，并为该角色添加名为**AliyunCloudMonitorFullAccess**的访问云监控服务的权限。
     2.  在**实例信息**页签下打开**云监控状态**，如下图所示。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773420037199_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587937199_zh-CN.png)
 
     3.  在实例进程后，单击**查看**，可查看实例各个进程的信息及CPU、内存使用率。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773420037200_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587937200_zh-CN.png)
 
 
 ## 下一步 {#section_ghp_c5p_fhb .section}
@@ -164,10 +164,10 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
 1.  在实例详情页面，单击右上角**部署**后在弹出框中单击**确定**，部署边缘实例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773420046919_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587946919_zh-CN.png)
 
 2.  当部署状态显示为**部署成功**，表示部署实例完成。您可以单击**查看日志**，查看部署详情。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773420046924_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587946924_zh-CN.png)
 
 
