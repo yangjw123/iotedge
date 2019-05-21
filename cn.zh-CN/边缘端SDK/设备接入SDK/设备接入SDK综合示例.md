@@ -143,9 +143,7 @@ static int parse_driverconfig_and_onlinedevice(const char* driver_config)
 
             /*  parse user custom config 
                 因为本demo主要介绍驱动开发流程和SDK接口的使用，所以并没有完整的实现设备和驱动的连接。实际应用场景中这部分是
-                必须要实现的，要实现驱动和设备的连接，开发者可以通过在设备关联驱动配置流程时通过自定义配置来配置设备连接信息，
-                操作流程可以参考如下链接
-                https://help.aliyun.com/document_detail/85236.html?spm=a2c4g.11186623.6.583.64bd3265NR9Ouo
+                必须要实现的，要实现驱动和设备的连接，开发者可以通过在设备关联驱动配置流程时通过自定义配置来配置设备连接信息
 
                 如果用户在自定义配置中填写内容为
                 { 
