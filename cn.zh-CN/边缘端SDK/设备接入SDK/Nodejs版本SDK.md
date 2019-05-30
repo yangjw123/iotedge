@@ -372,16 +372,6 @@ Promise<Void>
 Promise<Void>
 ```
 
-**getTslConfig\(\)**
-
-返回TSL配置字符串。
-
-返回值：
-
-```
-Promise<String>
-```
-
 **cleanup\(\)**
 
 资源回收接口，您可以使用该接口回收您的资源。
