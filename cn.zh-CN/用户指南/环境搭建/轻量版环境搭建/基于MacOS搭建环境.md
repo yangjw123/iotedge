@@ -10,10 +10,10 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 2.  打开**系统偏好设置** \> **共享**。
 3.  勾选**远程登陆**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/149667/155773426741582_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/149667/155989497641582_zh-CN.png)
 
 
-## 创建边缘实例和网关 { .section}
+## 创建边缘实例和网关 {#section_jwc_a32_0is .section}
 
 1.  [物联网平台控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例**。
 2.  创建一个边缘实例。
@@ -22,13 +22,13 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773426837158_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989497637158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773426837159_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989497737159_zh-CN.png)
 
         参数说明如下：
 
@@ -53,7 +53,7 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773426837160_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989497737160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -66,15 +66,23 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 
  |
 
-    6.  （可选）在新增实例页面，单击**新增标签**，可以设置实例标签。通过标签您可以更加有效地归类及识别实例。您也可以不设置标签。
-3.  实例参数设置完成后，单击**确定**，至此您已创建边缘实例和网关。
-4.  在**实例详情** \> **实例信息**页面，网关页签下，单击网关名称右侧的查看，获取网关设备信息。
+    6.  根据所搭建的环境，选择对应的Link IoT Edge产品规格，详细介绍请参见[产品规格](../cn.zh-CN/产品简介/产品规格.md#)。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773426837161_zh-CN.png)
+        **说明：** 选定产品规格并创建边缘实例后，若要修改产品规格，则只能更新至高级别的产品版本。产品规格级别顺序如下：
+
+        LE Pro（专业版）\> LE Standard（标准版）\> LE Lite（轻量版）
+
+        例如，边缘实例的产品规格为轻量版时，可以修改为专业版或标准版；若产品规格为专业版，则不可以修改。
+
+    7.  （可选）在新增实例页面，单击**新增标签**，可以设置实例标签。通过标签您可以更加有效地归类及识别实例。您也可以不设置标签。
+3.  实例参数设置完成后，单击**确定**，至此您已创建边缘实例和网关。
+4.  在**实例详情** \> **网关**页面，单击网关名称右侧的**查看**，获取网关设备信息。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/163487/155989497748695_zh-CN.png)
 
     系统跳转到网关设备的设备详情页面，在设备详情页面获取网关设备的设备证书（ProductKey、DeviceName、DeviceSecret），用于后续启动Link IoT Edge。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773426837164_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/163487/155989497748696_zh-CN.png)
 
 
 ## 启动Link IoT Edge {#section_tmr_hb5_jgb .section}
@@ -82,13 +90,13 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 1.  登录您MacOS系统的设备。
 2.  打开如下图所示设备本地终端。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/149667/155773426841612_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/149667/155989497741612_zh-CN.png)
 
-3.  从[发布历史](../cn.zh-CN/产品简介/发布历史.md#)轻量版（LE Lite）中下载使用环境为MacOS的Link IoT Edge轻量版软件包，保存到设备本地目录。
+3.  从[发布历史](../cn.zh-CN/产品简介/发布历史/发布历史.md#)轻量版（LE Lite）中下载使用环境为MacOS的Link IoT Edge轻量版软件包，保存到设备本地目录。
 
     例如，下载v1.8.2版本LE Lite软件包到~/Desktop目录，则在本地终端执行如下命令：
 
-    ```
+    ``` {#codeblock_gwz_t52_ee7}
     cd ~/Desktop
     ls -alh link-iot-edge-lite-macos-x86-64-v1.8.2.zip
     ```
@@ -97,7 +105,7 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 
     例如，将已下载完成的v1.8.2版本LE Lite软件包解压到~/Desktop目录，则执行如下命令：
 
-    ```
+    ``` {#codeblock_y98_pyc_csi}
     tar xopfv link-iot-edge-lite-macos-x86-64-v1.8.2.zip
     ```
 
@@ -105,7 +113,7 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 
     Link IoT Edge启动脚本在软件包/linkedge/gateway/build/script目录下，因此若要启动上述示例中已解压的v1.8.2版本LE Lite，则执行如下命令：
 
-    ```
+    ``` {#codeblock_p03_33d_usx}
     cd ~/Desktop/linkedge/gateway/build/script
     ./iot_gateway_start_lite.sh {YourProductKey} {YourDeviceName} {YourDeviceSecret}
     ```
@@ -114,21 +122,22 @@ MacOS设备需要预先配置远程桌面服务，否则无法远程访问。Mac
 
     例如，网关设备证书信息为ProductKey：a1\*\*\*\*\*\*gs、DeviceName：gateway、DeviceSecret：2Px\*\*\*\*\*\*\*\*\*\*\*\*\*\*H1S，则执行的实际命令如下：
 
-    ```
+    ``` {#codeblock_dc5_ozt_91j}
     
     ./iot_gateway_start_lite.sh a1******gs gateway 2Px**************H1S
     ```
 
     若系统显示如下信息，表示Link IoT Edge核心服务启动成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/149667/155773426841645_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/149667/155989497741645_zh-CN.png)
 
-    您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，查看网关状态。
+    您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，选择**网关**，查看网关状态。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155773426837203_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155989497748694_zh-CN.png)
 
 
-## 下一步 { .section}
+## 下一步 {#section_2b3_wh6_dn1 .section}
 
-在**实例详情**页面，打开**远程调试**后，在网关名称右侧的操作栏中单击**远程连接**、**远程文件管理**或者**更多远程服务**，远程控制网关设备或对网关设备上的文件进行管理。详细说明请参见[远程服务访问](../cn.zh-CN/用户指南/远程运维管理/远程服务访问.md#)。
+1.  **实例详情**页面选择**设置**页签，并在实例信息下，打开远程调试后的按钮。
+2.  **实例详情**页面选择**网关**页签，在网关名称右侧的操作栏中单击**远程连接**、**远程文件管理**或者**更多远程服务**，远程控制网关设备或对网关设备上的文件进行管理。详细说明请参见[远程服务访问](../cn.zh-CN/用户指南/远程运维管理/远程服务访问.md#)。
 
