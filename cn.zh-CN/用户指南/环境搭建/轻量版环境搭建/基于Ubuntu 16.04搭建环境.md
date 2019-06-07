@@ -16,13 +16,13 @@
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773422237158_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989442437158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773422237159_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989442437159_zh-CN.png)
 
         参数说明如下：
 
@@ -47,7 +47,7 @@
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773422237160_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989442437160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -60,29 +60,37 @@
 
  |
 
-    6.  （可选）在新增实例页面，单击**新增标签**，可以设置实例标签。通过标签您可以更加有效地归类及识别实例。您也可以不设置标签。
+    6.  根据所搭建的环境，选择对应的Link IoT Edge产品规格，详细介绍请参见[产品规格](../cn.zh-CN/产品简介/产品规格.md#)。
+
+        **说明：** 选定产品规格并创建边缘实例后，若要修改产品规格，则只能更新至高级别的产品版本。产品规格级别顺序如下：
+
+        LE Pro（专业版）\> LE Standard（标准版）\> LE Lite（轻量版）
+
+        例如，边缘实例的产品规格为轻量版时，可以修改为专业版或标准版；若产品规格为专业版，则不可以修改。
+
+    7.  （可选）在新增实例页面，单击**新增标签**，可以设置实例标签。通过标签您可以更加有效地归类及识别实例。您也可以不设置标签。
 3.  实例参数设置完成后，单击**确定**，至此您已创建边缘实例和网关。
 
 ## 启动Link IoT Edge {#section_tmr_hb5_jgb .section}
 
 1.  在左侧导航栏中选择**边缘计算** \> **边缘实例**，单击实例名称右侧的**下载**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155773422244201_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989442544201_zh-CN.png)
 
 2.  根据环境设置下载参数，然后单击**生成命令**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155773422244238_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155989442544238_zh-CN.png)
 
     |参数|描述|
     |--|--|
     |CPU架构|您的设备系统对应的CPU架构。此处选择x86-64。|
-    |产品规格|选择Link IoT Edge的[产品规格](../cn.zh-CN/产品简介/产品规格.md#)，Link IoT Edge有专业版、标准版和轻量版三种。此处选择轻量版。|
-    |边缘版本|选择Link IoT Edge的[发布版本](../cn.zh-CN/产品简介/发布历史.md#)。|
+    |产品规格|在创建边缘实例时，已选择实例中使用的Link IoT Edge版本。此处不可操作。|
+    |边缘版本|选择Link IoT Edge的[发布版本](../cn.zh-CN/产品简介/发布历史/发布历史.md#)。|
     |操作系统|选择您的设备对应的操作系统。此处选择Linux|
 
 3.  复制Linux 操作系统命令备用。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155773422244857_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155989442544857_zh-CN.png)
 
 4.  登录您Ubuntu 16.04系统的机器。
 5.  任意目录下执行步骤3中已复制的命令。
@@ -91,51 +99,52 @@
 
     **说明：** 如果不是第一次安装启动Link IoT Edge，可使用已下载的link-iot-edge-lite.sh脚本，对Link IoT Edge进行重启、停止、获取状态、修改配置参数等操作，命令详情请见下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155773422244855_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155989442544855_zh-CN.png)
 
     若系统显示如下信息，表示Link IoT Edge核心服务启动成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155773422237295_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155989442537295_zh-CN.png)
 
-    您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，查看网关状态。
+    您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，选择**网关**，查看网关状态。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155773422237203_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/155989442548694_zh-CN.png)
 
 
 ## 使用systemd管理Link IoT Edge {#section_rm4_vkc_kgb .section}
 
 -   下载service文件。
 
-    ```
+    ``` {#codeblock_u2b_ygk_npl}
     wget http://remote-access-oxs.oss-cn-shanghai.aliyuncs.com/%E8%84%9A%E6%9C%AC/LinkIoTEdgeLite.service
     ```
 
 -   将service文件拷贝到/etc目录。
 
-    ```
+    ``` {#codeblock_b2p_1uk_f26}
     sudo cp LinkIoTEdgeLite.service /etc/systemd/system/LinkIoTEdgeLite.service
     ```
 
 -   启动Link IoT Edge。
 
-    ```
+    ``` {#codeblock_pqe_hq5_o54}
     sudo systemctl start LinkIoTEdgeLite.service
     ```
 
 -   停止Link IoT Edge。
 
-    ```
+    ``` {#codeblock_waw_6ie_tvi}
     sudo systemctl restart LinkIoTEdgeLite.service
     ```
 
 -   开机自启动Link IoT Edge。
 
-    ```
+    ``` {#codeblock_x7y_q7v_qeu}
     sudo systemctl enable LinkIoTEdgeLite.service
     ```
 
 
-## 下一步 { .section}
+## 下一步 {#section_6ws_oej_f24 .section}
 
-在**实例详情**页面，打开**远程调试**后，在网关名称右侧的操作栏中单击**远程连接**、**远程文件管理**或者**更多远程服务**，远程控制网关设备或对网关设备上的文件进行管理。详细说明请参见[远程服务访问](../cn.zh-CN/用户指南/远程运维管理/远程服务访问.md#)。
+1.  **实例详情**页面选择**设置**页签，并在实例信息下，打开远程调试后的按钮。
+2.  **实例详情**页面选择**网关**页签，在网关名称右侧的操作栏中单击**远程连接**、**远程文件管理**或者**更多远程服务**，远程控制网关设备或对网关设备上的文件进行管理。详细说明请参见[远程服务访问](../cn.zh-CN/用户指南/远程运维管理/远程服务访问.md#)。
 
