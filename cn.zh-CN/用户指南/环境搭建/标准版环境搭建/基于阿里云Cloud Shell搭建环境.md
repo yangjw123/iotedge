@@ -6,7 +6,7 @@
 
 Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE Standard）软件包。
 
-## 创建边缘实例和网关 { .section}
+## 创建边缘实例和网关 {#section_t1m_fa6_xva .section}
 
 1.  [物联网平台控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例**。
 2.  创建一个边缘实例。
@@ -15,13 +15,13 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587737158_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989434637158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587737159_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989434637159_zh-CN.png)
 
         参数说明如下：
 
@@ -46,7 +46,7 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587837160_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989434637160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -59,104 +59,86 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
  |
 
-    6.  （可选）在新增实例页面，单击**新增标签**，可以设置实例标签。通过标签您可以更加有效地归类及识别实例。您也可以不设置标签。
+    6.  根据所搭建的环境，选择对应的Link IoT Edge产品规格，详细介绍请参见[产品规格](../cn.zh-CN/产品简介/产品规格.md#)。
+
+        **说明：** 选定产品规格并创建边缘实例后，若要修改产品规格，则只能更新至高级别的产品版本。产品规格级别顺序如下：
+
+        LE Pro（专业版）\> LE Standard（标准版）\> LE Lite（轻量版）
+
+        例如，边缘实例的产品规格为轻量版时，可以修改为专业版或标准版；若产品规格为专业版，则不可以修改。
+
+    7.  （可选）在新增实例页面，单击**新增标签**，可以设置实例标签。通过标签您可以更加有效地归类及识别实例。您也可以不设置标签。
 3.  实例参数设置完成后，单击**确定**，至此您已创建边缘实例和网关。
-4.  在**实例详情** \> **实例信息**页面，网关页签下，单击网关名称右侧的查看，获取网关设备信息。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587837161_zh-CN.png)
-
-    系统跳转到网关设备的设备详情页面，在设备详情页面获取网关设备的设备证书（ProductKey、DeviceName、DeviceSecret），用于后续启动Link IoT Edge。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587837164_zh-CN.png)
-
 
 ## 启动Link IoT Edge {#section_qbn_hyb_bhb .section}
 
-1.  以阿里云账号登录 [Cloud Shell](https://shell.aliyun.com/)。
-2.  在授权提示窗口中，单击**确认**授权Cloud Shell获取临时的会话访问密钥。
+1.  在左侧导航栏中选择**边缘计算** \> **边缘实例**，单击实例名称右侧的**下载**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840466_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989434644201_zh-CN.png)
 
-3.  在挂载存储空间提示窗口中，选择**暂不创建**。
+2.  根据环境设置下载参数，然后单击**生成命令**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840467_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155989434644200_zh-CN.png)
+
+    |参数|描述|
+    |--|--|
+    |CPU架构|您的设备系统对应的CPU架构。此处选择x86-64。|
+    |产品规格|在创建边缘实例时，已选择实例中使用的Link IoT Edge版本。此处不可操作。|
+    |边缘版本|选择Link IoT Edge的[发布版本](../cn.zh-CN/产品简介/发布历史/发布历史.md#)。|
+
+3.  复制Linux 操作系统命令备用。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155989434644205_zh-CN.png)
+
+4.  以阿里云账号登录 [Cloud Shell](https://shell.aliyun.com/)。
+5.  在授权提示窗口中，单击**确认**授权Cloud Shell获取临时的会话访问密钥。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155989434640466_zh-CN.png)
+
+6.  在挂载存储空间提示窗口中，选择**暂不创建**。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155989434640467_zh-CN.png)
 
     等待15 ~ 30秒后系统成功登录Cloud Shell，操作界面如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840399_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155989434640399_zh-CN.png)
 
-4.  执行如下命令，查看Cloud Shell运行环境的CPU。
+7.  任意目录下执行步骤3中已复制的命令。
 
-    ```
-    cat /proc/cpuinfo
-    ```
+    该命令实现一键下载、配置并启动Link IoT Edge。命令执行完成后，会在当前目录中下载link-iot-edge-standard.sh脚本。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587840400_zh-CN.png)
+    **说明：** 如果不是第一次安装启动Link IoT Edge，可使用已下载的link-iot-edge-standard.sh脚本，对Link IoT Edge进行重启、停止、获取状态、修改配置参数等操作，命令详情请见下图：
 
-    CPU为Intel E5-2682，因此使用Link IoT Edge标准版（LE Standard）x86\_64架构安装包。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155989434744213_zh-CN.png)
 
-5.  执行如下命令下载适用于x86\_64架构的Link IoT Edge软件包。
+8.  执行如下命令查看Link IoT Edge核心服务的运行状态。
 
-    ```
-    wget http://link-iot-edge-packet.oss-cn-shanghai.aliyuncs.com/x86-64-linux-gnu/link-iot-edge-x86-64-v1.8.2.tar.gz
-    ```
-
-    **说明：** 上述命令中使用的下载软件包地址为x86\_64系统v1.8.2版本软件包地址，其他高于v1.8.2版本的LE Standard软件包下载地址请见[发布历史](../cn.zh-CN/产品简介/发布历史.md#)。
-
-6.  执行如下命令解压并安装Link IoT Edge软件包。
-
-    ```
-    tar xzvf link-iot-edge-x86-64-v1.8.2.tar.gz -C /tmp/ && mv /tmp/linkedge/* /linkedge && rm -rf /tmp/linkedge
-    ```
-
-7.  配置网关初始化参数到安全存储。
-
-    ```
-    cd /linkedge/gateway/build/script
-    ./set_gw_triple.sh {YourProductKey} {YourDeviceName} {YourDeviceSecret}
-    ```
-
-    **说明：** 请将\{YourProductKey\} \{YourDeviceName\} \{YourDeviceSecret\}替换为已在本地保存的网关设备的设备证书信息。
-
-    例如，网关设备证书信息为ProductKey：a1\*\*\*\*\*\*gs、DeviceName：gateway、DeviceSecret：2Px\*\*\*\*\*\*\*\*\*\*\*\*\*\*H1S，则执行的实际命令如下：
-
-    ```
-    ./set_gw_triple.sh a1******gs gateway 2Px**************H1S
-    ```
-
-8.  启动Link IoT Edge核心服务。
-
-    ```
-    cd /linkedge/gateway/build/script
-    ./iot_gateway_start.sh
-    ```
-
-9.  执行如下命令查看Link IoT Edge核心服务的运行状态。
-
-    ```
+    ``` {#codeblock_cv8_xor_rdi}
     ./iot_gateway_status.sh
     ```
 
     若系统显示如下信息，表示Link IoT Edge核心服务启动成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155807587940402_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/135995/155989434740402_zh-CN.png)
 
-    您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择**边缘计算** \> **边缘实例**，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，查看网关状态。
+    您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择**边缘计算** \> **边缘实例**，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，选择**网关**，查看网关状态。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/155807587937203_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103167/155989434748660_zh-CN.png)
 
-10. （可选）在实例详情页面，查看CPU使用率、内存使用率、存储使用率以及实例进程需要授权访问阿里云云监控（CloudMonitor）服务。
+9.  （可选）在实例详情页面，查看CPU使用率、内存使用率、存储使用率以及实例进程需要授权访问阿里云云监控（CloudMonitor）服务。
     1.  请参考[云资源访问](../cn.zh-CN/用户指南/云资源访问.md#)内容，在[RAM控制台](https://ram.console.aliyun.com)，创建授信**IoT物联网**的服务角色，并为该角色添加名为**AliyunCloudMonitorFullAccess**的访问云监控服务的权限。
-    2.  在**实例信息**页签下打开**云监控状态**，如下图所示。
+    2.  选择**设置**页签，在实例信息中打开**云监控状态**按钮，如下图所示。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587937199_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/301656/155989434748668_zh-CN.png)
+
+        云监控状态打开后，可在实例详情选择**监控信息**，查看网关的各类监控信息。
 
     3.  在实例进程后，单击**查看**，可查看实例各个进程的信息及CPU、内存使用率。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587937200_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/301656/155989434748669_zh-CN.png)
 
 
-## 下一步 {#section_ghp_c5p_fhb .section}
+## 下一步 {#section_lxd_kp6_gfn .section}
 
 环境搭建完成后，您可以参考[设备接入](../cn.zh-CN/用户指南/设备接入/设备接入简介.md#)章节内容，把您的设备接入到物联网边缘计算。同时也可以为边缘实例分配其他资源（如函数计算、消息路由等）管理您的设备。
 
@@ -164,10 +146,10 @@ Cloud Shell仅支持搭建v1.8.2及以上版本的Link IoT Edge标准版（LE St
 
 1.  在实例详情页面，单击右上角**部署**后在弹出框中单击**确定**，部署边缘实例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587946919_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/301656/155989434748670_zh-CN.png)
 
 2.  当部署状态显示为**部署成功**，表示部署实例完成。您可以单击**查看日志**，查看部署详情。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/155807587946924_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/301656/155989434748671_zh-CN.png)
 
 
