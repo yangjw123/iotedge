@@ -48,13 +48,13 @@
     9.  确认函数信息后，单击**创建**。
     10. 在线编辑参数。 创建函数完成后，单击函数名称，在**代码执行**页签下选择**在线编辑**更改源码。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/155842419339340_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156016769039340_zh-CN.png)
 
         其中，
 
         -   将<Your OSS Region\>替换为步骤[1](#)中创建空间存储时选择的区域信息，请从空间存储的**概览**页面查看，如下图示例所示。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/155842419339352_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156016769139352_zh-CN.png)
 
         -   将<Your OSS Bucket\>替换为步骤[1](#)中创建空间存储时设置的Bucket 名称，即**le-fc-bucket**。
     11. 登录[前提条件](#)中已完成的网关，执行如下命令生成本地测试文件，为样例代码中的本地上传文件功能准备一个名为localFile.txt的本地文件。 
@@ -98,7 +98,7 @@
     3.  在[前提条件](#)中完成的边缘实例右侧，单击**查看**。
     4.  在实例详情页面，选择**设置**，单击**添加角色**，为边缘实例分配**AliyunIOTAccessingFCRole**角色。然后单击**确定**。
     5.  在实例详情页面，选择**函数计算**，单击**分配函数**。
-    6.  在分配函数页面中，将已创建的访问OSS函数**accessAliOSS**分配到边缘实例中。 参数说明如下：
+    6.  根据界面提示设置参数，将已创建的访问OSS函数**accessAliOSS**分配到边缘实例中。 函数信息配置说明如下：
 
         |参数|描述|
         |--|--|
@@ -107,7 +107,7 @@
         |函数|选择**accessAliOSS**函数。|
         |授权|选择**AliyunIOTAccessingFCRole**。|
 
-    7.  单击**分配**，然后配置函数。 
+        函数配置说明如下：
 
         |参数|描述|
         |--|--|
@@ -116,13 +116,14 @@
         |超时限制|函数收到事件后的最长处理时间，此处使用默认值5秒。如超过该时间函数仍未返回结果，该函数计算程序将会被强制重启。|
         |定时运行|单击开关按钮，打开定时运行，文本框中填入`* * * * *`。表示该函数会被定时触发运行，每分钟执行一次。Cron表达式详细信息请参考[CRONTAB 网页](http://crontab.org/)内容。|
 
-        单击**确定**，至此您已将访问OSS函数分配到边缘实例中。
+        其余参数无需配置。
 
+    7.  单击**确认**，至此您已将访问OSS函数分配到边缘实例中。
 4.  部署边缘实例并查看设备的运行结果。 
     1.  在实例详情页面，单击右上角**部署**后在弹出框中单击**确定**，将子设备、函数计算下发到边缘端。 您可以通过单击**部署详情**来查看部署进度及结果。
     2.  实例部署成功约一分钟后，可以在[对象存储控制台](https://oss.console.aliyun.com/overview)，**le-fc-bucket** \> **文件管理**页面，可以看到fileFromEdge.txt文件已经成功上传。 可以单击文件右侧的**更多** \> **下载**，将文件下载到PC上查看文件内容。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/155842419339380_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156016769139380_zh-CN.png)
 
         至此您已经完整地体验了使用边缘函数计算实现阿里云OSS服务的访问功能。
 
