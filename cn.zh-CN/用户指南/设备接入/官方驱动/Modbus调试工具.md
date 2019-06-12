@@ -16,12 +16,12 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
 3.  在**实例详情** \> **设备驱动配置**页面，选择**全部驱动**下的Modbus驱动，单击设备名称右侧的**调试**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156013408844172_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156032722244172_zh-CN.png)
 
 4.  在通信通道调试页面，单击**添加属性点**，配置调试。
     -   线圈配置参数说明如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156013408844174_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156032722344174_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
@@ -47,7 +47,7 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
     -   寄存器配置参数说明如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156013408844177_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156032722344177_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
