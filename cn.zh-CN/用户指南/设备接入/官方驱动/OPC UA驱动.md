@@ -8,7 +8,7 @@ OPC UA驱动目前仅支持在Link IoT Edge专业版（LE Pro）上运行。
 
 OPC UA驱动和OPC UA设备的连接是通过OPC UA服务器关联的，OPC UA驱动通过操作OPC UA服务器对外暴露的协议接口操作OPC UA设备，详情见下图。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156015522833401_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156032724333401_zh-CN.png)
 
 ## 使用步骤 {#section_i5o_ekj_lg3 .section}
 
@@ -21,7 +21,7 @@ OPC UA驱动的使用步骤如下：
 3.  在**实例详情**页面，选择设备驱动配置，单击**全部驱动**右侧的“`+`”图标 。
 4.  在分配驱动弹出窗口中，选择OPC UA驱动，单击对应操作栏中的**分配**。然后单击**完成**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156015522848705_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156032724348705_zh-CN.png)
 
 5.  单击已分配的OPC UA驱动，在设备列表右侧单击**驱动配置**。
 6.  在弹出窗口中单击**添加通道**。
@@ -42,15 +42,15 @@ OPC UA驱动的使用步骤如下：
     -   也可以根据如下步骤，新建OPC UA设备。
     1.  在右侧弹出的分配子设备页面中，单击**添加子设备**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156015522837903_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156032724337903_zh-CN.png)
 
     2.  在添加设备页面，单击**新建产品**，创建OPC UA设备所属产品。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156015522837904_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156032724437904_zh-CN.png)
 
     3.  在创建产品页面设置参数后，单击**确认**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156015522948787_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156032724448787_zh-CN.png)
 
         |参数|描述|
         |--|--|
@@ -60,12 +60,12 @@ OPC UA驱动的使用步骤如下：
 
     4.  返回添加设备页面，添加OPC UA设备。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156015522948788_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156032724448788_zh-CN.png)
 
     5.  在分配子设备页面，将新建的OPC UA设备分配到边缘实例。
 9.  分配设备到边缘实例后，单击设备名称对应操作栏中的**设备配置**，通过关联通道，关联设备与OPC UA驱动。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156015522948789_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/188524/156032724448789_zh-CN.png)
 
     |参数|描述|
     |--|--|
