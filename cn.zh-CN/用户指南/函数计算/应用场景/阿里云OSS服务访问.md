@@ -48,13 +48,13 @@
     9.  确认函数信息后，单击**创建**。
     10. 在线编辑参数。 创建函数完成后，单击函数名称，在**代码执行**页签下选择**在线编辑**更改源码。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156016769039340_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156032859639340_zh-CN.png)
 
         其中，
 
         -   将<Your OSS Region\>替换为步骤[1](#)中创建空间存储时选择的区域信息，请从空间存储的**概览**页面查看，如下图示例所示。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156016769139352_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156032859639352_zh-CN.png)
 
         -   将<Your OSS Bucket\>替换为步骤[1](#)中创建空间存储时设置的Bucket 名称，即**le-fc-bucket**。
     11. 登录[前提条件](#)中已完成的网关，执行如下命令生成本地测试文件，为样例代码中的本地上传文件功能准备一个名为localFile.txt的本地文件。 
@@ -123,7 +123,7 @@
     1.  在实例详情页面，单击右上角**部署**后在弹出框中单击**确定**，将子设备、函数计算下发到边缘端。 您可以通过单击**部署详情**来查看部署进度及结果。
     2.  实例部署成功约一分钟后，可以在[对象存储控制台](https://oss.console.aliyun.com/overview)，**le-fc-bucket** \> **文件管理**页面，可以看到fileFromEdge.txt文件已经成功上传。 可以单击文件右侧的**更多** \> **下载**，将文件下载到PC上查看文件内容。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156016769139380_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/129670/156032859639380_zh-CN.png)
 
         至此您已经完整地体验了使用边缘函数计算实现阿里云OSS服务的访问功能。
 
