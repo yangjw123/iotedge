@@ -6,7 +6,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 1.  您可以通过如下命令来安装SDK：
 
-    ```
+    ``` {#codeblock_rf9_bb2_ak3}
     pip3 install lethingaccesssdk
     ```
 
@@ -14,11 +14,11 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 2.  安装完成后，您可以根据SDK接口进行驱动开发。
 
-    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[驱动开发](../../../../cn.zh-CN/用户指南/设备接入/驱动开发.md#)。
+    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[概览](../../../../cn.zh-CN/用户指南/设备接入/驱动开发/概览.md#)。
 
     使用SDK开发驱动的示例代码片段如下所示：
 
-    ```
+    ``` {#codeblock_6zz_81l_5sx}
     # -*- coding: utf-8 -*-
     import logging
     import time
@@ -55,20 +55,20 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
             :return:
             '''
             return 0, {}
-    def thing_behavior(client, app_callback):
+    def thing_behavior(client, device):
         while True:
-            properties = {"temperature": app_callback.temperature,
-                          "humidity": app_callback.humidity}
+            properties = {"temperature": device.temperature,
+                          "humidity": device.humidity}
             client.reportProperties(properties)
             client.reportEvent("high_temperature", {"temperature": 41})
             time.sleep(2)
     try:
-        infos = lethingaccesssdk.Config().getThingInfos()
-        for info in infos:
-            app_callback = Temperature_device()
-            client = lethingaccesssdk.ThingAccessClient(info)
-            client.registerAndonline(app_callback)
-            t = Timer(2, thing_behavior, (client, app_callback))
+        thing_config = lethingaccesssdk.Config().getThingInfos()
+        for config in thing_config:
+            device = Temperature_device()
+            client = lethingaccesssdk.ThingAccessClient(config)
+            client.registerAndonline(device)
+            t = Timer(2, thing_behavior, (client, device))
             t.start()
     except Exception as e:
         logging.error(e)
@@ -104,6 +104,16 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |deviceName|String|设备名称。|
 |custom|Object|设备自定义配置。|
 
+**getDriverInfo\(\)**
+
+返回驱动相关信息。
+
+返回值：
+
+``` {#codeblock_j09_hm6_sv9}
+dict
+```
+
 ## ThingCallback {#section_jyj_lgq_kfb .section}
 
 首先根据真实设备，命名一个类（如Demo\_device）继承ThingCallback，然后在该类（Demo\_device）中实现setProperties、getProperties和callService三个函数。
@@ -114,7 +124,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 |名称|类型|描述|
 |--|--|--|
-|properties|Dict|设置属性，取值格式为： ```
+|properties|Dict|设置属性，取值格式为： ``` {#codeblock_h2h_zyt_907}
 {
     "property1": "value1", 
     "property2": "value2"
@@ -126,7 +136,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |名称|类型|描述|
 |--|--|--|
 |code|Integer|若获取成功则返回0，失败则返回非0错误码。|
-|output|Dict|数据内容自定义，例如： ```
+|output|Dict|数据内容自定义，例如： ``` {#codeblock_p8a_ge2_sff}
 {
     "key1": xxx,
     "key2": yyy,
@@ -144,7 +154,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 |名称|类型|描述|
 |--|--|--|
-|keys|List|获取属性对应的名称，取值格式为： ```
+|keys|List|获取属性对应的名称，取值格式为： ``` {#codeblock_ezk_e3x_ekl}
 ['key1', 'key2']
 ```
 
@@ -153,7 +163,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |名称|类型|描述|
 |--|--|--|
 |code|Integer|若获取成功则返回0，失败则返回非0错误码。|
-|output|Dict|返回值，例如： ```
+|output|Dict|返回值，例如： ``` {#codeblock_g2n_e1c_2ab}
 {
     'property1': xxx,
     'property2': yyy,
@@ -170,7 +180,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |名称|类型|描述|
 |--|--|--|
 |name|String|设备服务名称。|
-|args|Dict|服务入参列表，取值格式为： ```
+|args|Dict|服务入参列表，取值格式为： ``` {#codeblock_dlq_28t_51t}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -182,7 +192,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |名称|类型|描述|
 |--|--|--|
 |code|Integer|若获取成功则返回0，失败则返回非0错误码。|
-|output|Dict|数据内容自定义，例如： ```
+|output|Dict|数据内容自定义，例如： ``` {#codeblock_ffm_vy9_kgl}
 {
     "key1": xxx,
     "key2": yyy,
@@ -202,7 +212,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |--|--|--|
 |config|Dict|包括云端分配的ProductKey和deviceName。 例如，
 
-```
+``` {#codeblock_8dn_5oj_667}
 {
     "productKey": "xxx",
     "deviceName": "yyy"
@@ -225,7 +235,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 |名称|类型|描述|
 |--|--|--|
-|properties|Dict|属性中包含的属性key与value，取值格式为： ```
+|properties|Dict|属性中包含的属性key与value，取值格式为： ``` {#codeblock_hjh_oxg_qgy}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -241,7 +251,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 |名称|类型|描述|
 |--|--|--|
 |eventName|String|事件对应的名称，与您在产品定义中创建事件的名称一致。|
-|args|Dict|事件中包含的属性key与value，取值格式为： ```
+|args|Dict|事件中包含的属性key与value，取值格式为： ``` {#codeblock_7vp_71s_5e1}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -256,8 +266,18 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 返回值：
 
-```
+``` {#codeblock_gha_b73_5ug}
 TSL字符串
+```
+
+**getTslExtInfo\(\)**
+
+返回TSL扩展信息字符串。
+
+返回值：
+
+``` {#codeblock_yvh_yd9_sm2}
+TSL扩展信息字符串
 ```
 
 **online\(\)**
@@ -280,5 +300,5 @@ TSL字符串
 
 获取驱动相关配置信息。
 
-返回值为驱动配置信息。
+返回值为驱动配置信息字符串。
 
