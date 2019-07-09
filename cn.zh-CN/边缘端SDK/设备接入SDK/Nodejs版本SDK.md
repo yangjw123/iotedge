@@ -6,7 +6,7 @@
 
 1.  您可以通过如下命令来安装SDK：
 
-    ```
+    ``` {#codeblock_ka6_8tw_mw1}
     npm install linkedge-thing-access-sdk
     ```
 
@@ -14,11 +14,11 @@
 
 2.  安装完成后，您可以根据SDK接口进行驱动开发。
 
-    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[驱动开发](../../../../cn.zh-CN/用户指南/设备接入/驱动开发.md#)。
+    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[驱动开发](../../../../cn.zh-CN/用户指南/设备接入/驱动开发/概览.md#)。
 
     使用SDK开发驱动的示例代码片段如下所示：
 
-    ```
+    ``` {#codeblock_i8e_bat_gsy}
     const {
       Config,
       ThingAccessClient
@@ -100,7 +100,7 @@
 |ERROR\_DISCONNECT|String|调用offline\(\)出错错误码。|
 |ERROR\_GET\_CONFIG|String|调用getConfig\(\)出错错误码。|
 |ERROR\_GET\_TSL|String|调用getTsl\(\)出错错误码。|
-|ERROR\_GET\_TSL\_CONFIG|String|调用getTslConfig\(\)出错错误码。|
+|ERROR\_GET\_TSL\_EXT\_INFO|String|调用getTslExtInfo\(\)出错错误码。|
 |ERROR\_UNREGISTER|String|调用unregister\(\)出错错误码。|
 
 ## Config {#section_az2_wdh_chb .section}
@@ -115,7 +115,7 @@
 
 返回值：
 
-```
+``` {#codeblock_zxa_zls_v7b}
 Promise<Config>
 ```
 
@@ -149,8 +149,18 @@ Promise<Config>
 
 返回值：
 
-```
+``` {#codeblock_tz9_0ig_clz}
 ThingInfo[]
+```
+
+ **getDriverInfo\(\)** 
+
+返回驱动相关信息。
+
+返回值：
+
+``` {#codeblock_f4a_21l_3fh}
+Object
 ```
 
 ## ThingInfo {#section_e2d_pdh_chb .section}
@@ -177,7 +187,7 @@ ThingInfo[]
 
 |名称|类型|描述|
 |--|--|--|
-|config|Object|元数据，用于配置该客户端。取值格式为： ```
+|config|Object|元数据，用于配置该客户端。取值格式为： ``` {#codeblock_ckt_olb_q3p}
 {
     "productKey": "Your Product Key", 
     "deviceName": "Your Device Name"
@@ -185,7 +195,7 @@ ThingInfo[]
 ```
 
  |
-|callbacks|Object|回调函数对象。取值格式为： ```
+|callbacks|Object|回调函数对象。取值格式为： ``` {#codeblock_zs7_fbh_3iv}
 callbacks: {
     setProperties: function(properties) {},
     getProperties: function(keys) {},
@@ -205,7 +215,7 @@ callbacks: {
 
 |名称|类型|描述|
 |--|--|--|
-|properties|Object|设置属性的对象，取值格式为： ```
+|properties|Object|设置属性的对象，取值格式为： ``` {#codeblock_zad_9ii_jo4}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -216,7 +226,7 @@ callbacks: {
 
 返回值：
 
-```
+``` {#codeblock_o9s_61w_a01}
 {
   "code": 0,
   "message": "string",
@@ -239,7 +249,7 @@ callbacks: {
 
 |名称|类型|描述|
 |--|--|--|
-|keys|String\[\]|获取属性对应的名称，取值格式为： ```
+|keys|String\[\]|获取属性对应的名称，取值格式为： ``` {#codeblock_zvp_cc0_a1m}
 ['key1', 'key2']
 ```
 
@@ -247,7 +257,7 @@ callbacks: {
 
 返回值：
 
-```
+``` {#codeblock_pzs_wfr_5ef}
 {
   "code": 0,
   "message": "string",
@@ -271,7 +281,7 @@ callbacks: {
 |名称|类型|描述|
 |--|--|--|
 |name|String|设备服务名称。|
-|args|Object|服务入参列表，取值格式为： ```
+|args|Object|服务入参列表，取值格式为： ``` {#codeblock_s2d_kmn_9a5}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -293,11 +303,11 @@ callbacks: {
 
 设备接入客户端初始化。
 
-**说明：** Link IoT Edge当前版本已不再使用该函数，之前遗留的调用不受影响。
+**说明：** Link IoT Edge当前版本已不再使用该接口，之前遗留的调用不受影响。
 
 返回值：
 
-```
+``` {#codeblock_ho6_6x7_y61}
 Promise<Void>
 ```
 
@@ -307,7 +317,7 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_e0k_iq7_zmy}
 Promise<Void>
 ```
 
@@ -317,7 +327,7 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_r57_gu8_l8n}
 Promise<Void>
 ```
 
@@ -327,7 +337,7 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_3x2_nj7_9vr}
 Promise<Void>
 ```
 
@@ -338,7 +348,7 @@ Promise<Void>
 |名称|类型|描述|
 |--|--|--|
 |eventName|String|事件对应的名称，与您在产品定义中创建事件的名称一致。|
-|args|Object|事件中包含的属性key与value，取值格式为： ```
+|args|Object|事件中包含的属性key与value，取值格式为： ``` {#codeblock_g3q_3zm_osa}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -353,7 +363,7 @@ Promise<Void>
 
 |名称|类型|描述|
 |--|--|--|
-|properties|Object|属性中包含的属性key与value，取值格式为： ```
+|properties|Object|属性中包含的属性key与value，取值格式为： ``` {#codeblock_h35_x9q_z2v}
 {
     "key1": "value1", 
     "key2": "value2"
@@ -368,8 +378,30 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_qo9_ig1_w7x}
 Promise<Void>
+```
+
+ **getTslConfig\(\)** 
+
+**说明：** Link IoT Edge当前版本已不再使用该接口，已使用getTslExtInfo\(\)接口代替，之前遗留的调用不受影响。
+
+返回TSL配置字符串。
+
+返回值：
+
+``` {#codeblock_76l_83h_9o7}
+Promise<String>
+```
+
+**getTslExtInfo\(\)**
+
+返回TSL扩展信息字符串。
+
+返回值：
+
+``` {#codeblock_b45_a4u_z0d}
+Promise<String>
 ```
 
 **cleanup\(\)**
@@ -378,7 +410,7 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_uy1_1wq_2o5}
 Promise<Void>
 ```
 
@@ -388,7 +420,7 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_ew1_m86_1ji}
 Promise<Void>
 ```
 
@@ -400,7 +432,7 @@ Promise<Void>
 
 返回值：
 
-```
+``` {#codeblock_j2q_1dt_q9f}
 Promise<String>
 ```
 
@@ -410,7 +442,7 @@ Promise<String>
 
 返回值：
 
-```
+``` {#codeblock_rs8_82a_59y}
 Promise<Void>
 ```
 
