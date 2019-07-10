@@ -45,11 +45,11 @@ OPC UA Server的环境依赖如下表格所示：
 
 2.  安装完成后打开UaExpert工具。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561141036_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391341036_zh-CN.png)
 
 3.  在工具栏中单击“`+`”图标，新增OPC UA Server。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561141037_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391341037_zh-CN.png)
 
 4.  填写OPC UA Server的URL地址，建立与OPC UA Server的连接。URL为`OPC UA Server所在主机的IP地址:端口号`。
 
@@ -59,18 +59,18 @@ OPC UA Server的环境依赖如下表格所示：
     opc.tcp://192.168.1.1:4840
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561141038_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391441038_zh-CN.png)
 
 5.  配置完成URL地址后单击**OK**，显示设备信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561241040_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391441040_zh-CN.png)
 
 
 ## 步骤三、创建基于OPC UA协议的设备 {#section_cnq_oj0_a91 .section}
 
 1.  参考[创建产品](../../../../cn.zh-CN/用户指南/产品与设备/创建产品.md#)，创建OPC UA产品。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561241049_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391441049_zh-CN.png)
 
     其中，部分参数设置如下：
 
@@ -85,24 +85,24 @@ OPC UA Server的环境依赖如下表格所示：
     -   添加属性 
         1.  根据下图所示，设置属性参数。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561241068_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391441068_zh-CN.png)
 
         2.  设置参数完成后，单击**新增扩展描述**，配置节点名称。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561341069_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391441069_zh-CN.png)
 
             节点名称：设备在OPC UA Server中的变量节点DisplayName的值。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561344726_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391544726_zh-CN.png)
 
     -   添加服务 
         1.  根据下图所示，设置服务参数。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561341070_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391541070_zh-CN.png)
 
         2.  单击输入参数下的**增加参数**，为产品服务新增参数。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561341071_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391541071_zh-CN.png)
 
             参数索引：设备method输入输出参数，在OPC UA Server中method定义的参数顺序。
 
@@ -110,20 +110,20 @@ OPC UA Server的环境依赖如下表格所示：
 
         3.  设置参数完成后，单击**新增扩展描述**，配置节点名称。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561441072_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391541072_zh-CN.png)
 
             节点名称：设备method在OPC UA Server中的变量节点DisplayName的值。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561444729_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391644729_zh-CN.png)
 
     -   添加事件 
         1.  根据下图所示，设置事件参数。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561441073_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391641073_zh-CN.png)
 
         2.  单击输出参数下的**增加参数**，为产品事件新增参数。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561441074_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391641074_zh-CN.png)
 
             参数索引：设备事件参数，在OPC UA Server中事件参数顺序。
 
@@ -131,15 +131,15 @@ OPC UA Server的环境依赖如下表格所示：
 
         3.  设置参数完成后，单击**新增扩展描述**，配置节点名称。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561541075_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391641075_zh-CN.png)
 
             节点名称：设备事件在OPC UA Server中的变量节点DisplayName的值。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561544731_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391744731_zh-CN.png)
 
 3.  参考[单个创建设备](../../../../cn.zh-CN/用户指南/产品与设备/创建设备/单个创建设备.md#)，添加设备。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561541076_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391741076_zh-CN.png)
 
 
 ## 步骤四、配置边缘实例 {#section_xlq_7f1_ksj .section}
@@ -147,11 +147,11 @@ OPC UA Server的环境依赖如下表格所示：
 1.  在边缘实例页面找到**前提条件**中已创建的边缘实例，进入实例详情页面。
 2.  分配OPC UA驱动到边缘实例中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561549168_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391749168_zh-CN.png)
 
 3.  选择**OPCUA**驱动，单击设备列表后的**驱动配置**，在弹出窗口中单击**添加通道**，设置通道参数。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561641213_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391741213_zh-CN.png)
 
     |参数|描述|配置举例|
     |--|--|----|
@@ -163,31 +163,24 @@ OPC UA Server的环境依赖如下表格所示：
 
 4.  单击**分配子设备**，在**OPCUA**驱动下为边缘实例分配子设备。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561641204_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391841204_zh-CN.png)
 
 5.  分配子设备成功后，单击设备名称右侧的**设备配置**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561641214_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391841214_zh-CN.png)
 
     |参数|描述|
     |--|--|
     |关联通道|选择已添加的通道。|
     |节点路径|设备在OPC UA Server中，从Objects开始到设备节点的绝对路径。如demo\_led设备在OPC UA Server中的路径为Objects/demo\_led。|
 
-6.  参考[设置消息路由](../../../../cn.zh-CN/用户指南/消息路由/设置消息路由.md#)，配置边缘实例消息路由。
+6.  参考[设置消息路由](../../../../cn.zh-CN/用户指南/消息路由/设置消息路由.md#)，配置如下图所示的边缘实例消息路由。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561641215_zh-CN.png)
-
-    |参数|描述|
-    |--|--|
-    |消息来源|选择**设备** \> **全部产品**。|
-    |消息主题过滤|选择**全部**。|
-    |消息目标|选择**IoT Hub**。|
-    |服务级别|选择**0**。|
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391841215_zh-CN.png)
 
 7.  在实例详情页面右上角单击**部署**，部署边缘实例。
 8.  在**实例详情** \> **设备驱动配置**页面，选择**OPCUA**驱动，查看设备是否在线。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156041561741217_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141115/156274391841217_zh-CN.png)
 
 
