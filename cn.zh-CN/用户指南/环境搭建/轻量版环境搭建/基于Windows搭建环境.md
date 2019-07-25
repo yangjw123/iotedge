@@ -16,7 +16,7 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 -   当前软件包在Windows机器上的安装，大概需要占用200 MB左右的硬盘资源，请确保硬盘剩余资源足够。
 -   Windows机器需要预先配置远程桌面服务，否则无法远程访问。详细配置请参考[微软官方文档](https://support.microsoft.com/zh-cn/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection)。
 
-    ![Windows预置远程桌面服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335610941286_zh-CN.png)
+    ![Windows预置远程桌面服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583641286_zh-CN.png)
 
 
 ## 创建边缘实例和网关 {#section_eh5_fq1_1gf .section}
@@ -28,13 +28,13 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156335610937158_zh-CN.png)
+        ![创建网关](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403583637158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156335610937159_zh-CN.png)
+        ![新建产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403583637159_zh-CN.png)
 
         参数说明如下：
 
@@ -59,7 +59,7 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156335610937160_zh-CN.png)
+        ![新建网关设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403583637160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -77,22 +77,22 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 3.  实例参数设置完成后，单击**确定**，至此您已创建边缘实例和网关。
 4.  在**实例详情** \> **网关**页面，单击网关名称右侧的**查看**，获取网关设备信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/163487/156335611048695_zh-CN.png)
+    ![查看网关设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/163487/156403583648695_zh-CN.png)
 
     系统跳转到网关设备的设备详情页面，在设备详情页面获取网关设备的设备证书（ProductKey、DeviceName、DeviceSecret），用于后续启动Link IoT Edge。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/163487/156335611048696_zh-CN.png)
+    ![查看网关设备三元组](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/163487/156403583748696_zh-CN.png)
 
 
 ## 启动Link IoT Edge {#section_tmr_hb5_jgb .section}
 
 1.  在左侧导航栏中选择**边缘计算** \> **边缘实例**，单击实例名称右侧的**下载**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156335611044201_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403583744201_zh-CN.png)
 
 2.  根据环境设置下载参数，然后单击**生成命令**。
 
-    ![生成命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611051625_zh-CN.png)
+    ![生成命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583751625_zh-CN.png)
 
     |参数|描述|
     |--|--|
@@ -103,35 +103,35 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 
 3.  下载Windows操作系统安装包备用。
 
-    ![下载软件包](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611051627_zh-CN.png)
+    ![下载软件包](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583751627_zh-CN.png)
 
     下载安装包后如下所示：
 
-    ![本地下载包](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611141285_zh-CN.png)
+    ![本地下载包](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583741285_zh-CN.png)
 
 4.  登录您Windows 7版本64位系统的机器。
 5.  解压已下载的Link IoT Edge轻量版软件包。
 6.  在解压后的目录中找到后缀名为 .exe的可执行程序后双击程序启动Link IoT Edge轻量版。
 7.  在阿里云IoT边缘计算远程访问服务界面，输入已在本地保存的网关设备的设备证书信息，并单击左上角启动按钮。
 
-    ![启动轻量版Windows环境LE](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611141396_zh-CN.png)
+    ![启动轻量版Windows环境LE](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583841396_zh-CN.png)
 
     系统显示如下信息，表示已启动成功。
 
-    ![启动成功后](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611141287_zh-CN.png)
+    ![启动成功后](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583841287_zh-CN.png)
 
     **说明：** Windows版本默认访问本地3389端口的远程桌面服务，暂不支持端口配置。
 
     您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，选择**网关**，查看网关状态。
 
-    ![网关在线](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156335611248694_zh-CN.png)
+    ![网关在线](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156403583848694_zh-CN.png)
 
 
 ## 远程访问 {#section_shd_hwf_2hb .section}
 
 1.  打开远程访问助手，输入远程连接信息。详细使用说明请参考[远程访问助手](cn.zh-CN/用户指南/远程运维管理/远程访问助手.md#)。
 
-    ![打开远程助手](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611241398_zh-CN.png)
+    ![打开远程助手](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583941398_zh-CN.png)
 
     |参数| |
     |--|--|
@@ -144,7 +144,7 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 
 2.  配置远程桌面工具。
 
-    ![配置远程桌面](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611341580_zh-CN.png)
+    ![配置远程桌面](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403583941580_zh-CN.png)
 
     您需要配置如下参数，其余用默认值。
 
@@ -157,6 +157,6 @@ Link IoT Edge轻量版版软件包支持在Windows 7和 Windows 10版本32/64位
 
 3.  参数配置完成后单击**Start**，运行远程桌面。设备的远程桌面如下图所示，您可以使用鼠标和键盘进行操作。
 
-    ![启动成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156335611341581_zh-CN.png)
+    ![启动成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/147481/156403584041581_zh-CN.png)
 
 
