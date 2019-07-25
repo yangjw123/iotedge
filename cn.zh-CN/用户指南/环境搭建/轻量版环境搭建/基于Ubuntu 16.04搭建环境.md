@@ -16,13 +16,13 @@
 
         物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156229697037158_zh-CN.png)
+        ![创建网关产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403680437158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。
 
         物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156229697137159_zh-CN.png)
+        ![创建产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403680537159_zh-CN.png)
 
         参数说明如下：
 
@@ -47,7 +47,7 @@
 
         物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156229697137160_zh-CN.png)
+        ![新建网关设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403680537160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。
 
@@ -68,11 +68,11 @@
 
 1.  在左侧导航栏中选择**边缘计算** \> **边缘实例**，单击实例名称右侧的**下载**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156229697144201_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156403680544201_zh-CN.png)
 
 2.  根据环境设置下载参数，然后单击**生成命令**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156229697144238_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156403680544238_zh-CN.png)
 
     |参数|描述|
     |--|--|
@@ -83,7 +83,7 @@
 
 3.  复制Linux 操作系统命令备用。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156229697144857_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156403680544857_zh-CN.png)
 
 4.  登录您Ubuntu 16.04系统的机器。
 5.  任意目录下执行步骤3中已复制的命令。
@@ -92,15 +92,15 @@
 
     **说明：** 如果不是第一次安装启动Link IoT Edge，可使用已下载的link-iot-edge-lite.sh脚本，对Link IoT Edge进行重启、停止、获取状态、修改配置参数等操作，命令详情请见下图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156229697244855_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156403680644855_zh-CN.png)
 
     若系统显示如下信息，表示Link IoT Edge核心服务启动成功。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156229697237295_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156403680637295_zh-CN.png)
 
     您也可以在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例** ，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，选择**网关**，查看网关状态。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156229697248694_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/104167/156403680648694_zh-CN.png)
 
 
 ## 使用systemd管理Link IoT Edge {#section_rm4_vkc_kgb .section}
