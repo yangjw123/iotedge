@@ -1,6 +1,8 @@
 # Nodejs版本SDK {#concept_ycs_pcp_32b .concept}
 
-设备接入SDK用于您在网关上开发驱动，将设备连接到网关，进而连接到物联网平台。Node.js版本开源的SDK源码请见[开源的Node.js库](https://github.com/aliyun/linkedge-thing-access-sdk-nodejs)。
+设备接入SDK用于您在网关上开发驱动，将设备连接到网关，进而连接到物联网平台。
+
+Node.js版本开源的SDK源码请见[开源的Node.js库](https://github.com/aliyun/linkedge-thing-access-sdk-nodejs)。
 
 ## 安装和使用 {#section_p2z_rvz_bhb .section}
 
@@ -90,9 +92,9 @@
 |PRODUCT\_KEY|String|配置对象（传给ThingAccessClient构造函数）的键值，指定云端分配的productKey。|
 |DEVICE\_NAME|String|配置对象（传给ThingAccessClient构造函数）的键值，指定云端分配的deviceName。|
 |LOCAL\_NAME|String|配置对象（传给ThingAccessClient构造函数）的键值，指定本地自定义的设备名。|
-|CALL\_SERVICE|String|回调对象（传给ThingAccessClient构造函数）的键值，指定调用设备服务回调函数。回调函数格式请参阅callbacks.callService\(\)。|
-|GET\_PROPERTIES|String|回调对象（传给ThingAccessClient构造函数）的键值，指定获取设备属性回调函数。回调函数格式请参阅callbacks.getProperties\(\)。|
-|SET\_PROPERTIES|String|回调对象（传给ThingAccessClient构造函数）的键值，指定设置设备属性回调函数。回调函数格式请参阅callbacks.setProperties\(\)。|
+|CALL\_SERVICE|String|回调对象（传给ThingAccessClient构造函数）的键值，指定调用设备服务回调函数。回调函数格式请参见callbacks.callService\(\)。|
+|GET\_PROPERTIES|String|回调对象（传给ThingAccessClient构造函数）的键值，指定获取设备属性回调函数。回调函数格式请参见callbacks.getProperties\(\)。|
+|SET\_PROPERTIES|String|回调对象（传给ThingAccessClient构造函数）的键值，指定设置设备属性回调函数。回调函数格式请参见callbacks.setProperties\(\)。|
 |RESULT\_SUCCESS|Number|操作成功。用于回调函数返回状态码。|
 |RESULT\_FAILURE|Number|操作失败。用于回调函数返回状态码。|
 |ERROR\_CLEANUP|String|调用cleanup\(\)出错错误码。|
