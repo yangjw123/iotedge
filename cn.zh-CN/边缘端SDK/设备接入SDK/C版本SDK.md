@@ -1,6 +1,8 @@
 # C版本SDK {#concept_am2_t1s_xfb .concept}
 
-本章为您介绍C版本的SDK使用方法及相关API。Link IoT Edge提供C版本的SDK，名称为linkedge-thing-access-sdk-c。C版本开源的SDK源码请见[开源C库](https://github.com/aliyun/link-iot-edge-access-sdk-c)。
+本章为您介绍C版本的SDK使用方法及相关API。Link IoT Edge提供C版本的SDK，名称为linkedge-thing-access-sdk-c。
+
+C版本开源的SDK源码请参见[开源C库](https://github.com/aliyun/link-iot-edge-access-sdk-c)。
 
 ## get\_properties\_callback {#section_n2l_rbs_xfb .section}
 
