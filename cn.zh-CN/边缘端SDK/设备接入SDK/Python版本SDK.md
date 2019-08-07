@@ -1,6 +1,8 @@
 # Python版本SDK {#concept_ycs_pcp_32b .concept}
 
-Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您介绍Python版本的SDK使用方法及相关SDK。Python版本开源的SDK源码请见[开源的Python库](https://github.com/aliyun/linkedge-thing-access-sdk-python)。
+Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您介绍Python版本的SDK使用方法及相关SDK。
+
+Python版本开源的SDK源码请见[开源的Python库](https://github.com/aliyun/linkedge-thing-access-sdk-python)。
 
 ## 安装和使用 {#section_p2z_rvz_bhb .section}
 
@@ -14,7 +16,7 @@ Link IoT Edge提供Python版本的SDK，名称为lethingaccesssdk。本章为您
 
 2.  安装完成后，您可以根据SDK接口进行驱动开发。
 
-    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参考[概览](../../../../cn.zh-CN/用户指南/设备接入/驱动开发/概览.md#)。
+    **说明：** 完成驱动开发后，直接运行会提示错误，必须通过物联网平台控制台，将已开发的驱动部署到网关中方可执行。部署驱动到网关的操作请参见[驱动开发](../../../../cn.zh-CN/用户指南/设备接入/驱动开发/概览.md#)。
 
     使用SDK开发驱动的示例代码片段如下所示：
 
