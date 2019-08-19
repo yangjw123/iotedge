@@ -1,44 +1,42 @@
-# Modbus驱动 {#concept_ytg_13d_x2b .concept}
+# Modbus驱动 {#task_1495784 .task}
 
 Link IoT Edge提供Modbus和OPC UA两种官方驱动，用于支持工业领域广泛应用的Modbus和OPC UA两种通信协议设备。本文主要介绍Modbus驱动及其用法。
 
-## 概述 {#section_yia_9op_d6k .section}
+## 概览 {#section_epw_q9m_0iw .section}
 
 Modbus是常用的应用层数据通信协议，阿里云官方Modbus驱动（以下简称Modbus驱动）支持Modbus-RTU和Modbus-TCP两种交互。
 
 Modbus驱动可以直接连接Modbus从设备，详情见下图。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222321939309_zh-CN.png)
+![Modbus驱动直接连接设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618517939309_zh-CN.png)
 
 Modbus驱动也可以通过Modbus网关连接Modbus从设备，详情见下图。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222321939310_zh-CN.png)
+![Modbus驱动通过网关连设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518039310_zh-CN.png)
 
 Modbus驱动支持的功能有读取输入状态和输入寄存器，读/写线圈状态和保持寄存器。
 
 Link IoT Edge提供C和Python语言Modbus驱动，同时根据CPU架构的不同，有多种C语言Modbus驱动。您可以直接从控制台部署Modbus驱动到网关，也可以从控制台下载Modbus驱动代码进行修改，作为您的自定义驱动使用。
 
-## 使用步骤 {#section_u1b_487_inc .section}
+## 使用步骤 {#section_n2l_4ax_8u0 .section}
 
-1.  参考[环境搭建](cn.zh-CN/用户指南/环境搭建/专业版环境搭建/基于Ubuntu 16.04搭建环境.md#)，创建边缘实例并上线网关。
+1.  根据[环境搭建](cn.zh-CN/用户指南/环境搭建/专业版环境搭建/基于Ubuntu 16.04搭建环境.md#)内容，创建边缘实例并上线网关。
 2.  在**边缘计算** \> **边缘实例**页面，选择已创建的边缘实例，单击右侧的**查看**。
 3.  在**实例详情**页面，选择设备驱动配置，单击**全部驱动**右侧的“`+`”图标 。
-4.  在分配驱动弹出窗口中，根据网关CPU架构选择需要使用的Modbus驱动，单击对应操作栏中的**分配**。然后单击**完成**。
+4.  在分配驱动弹出窗口中，根据网关CPU架构选择需要使用的Modbus驱动，单击对应操作栏中的**分配**。然后单击**完成**。 
 
     **说明：** 
 
     -   C版本Modbus驱动，需在v1.8.4及以上版本的Link IoT Edge中使用。
     -   Python版本Modbus驱动，仅支持在Link IoT Edge专业版中使用。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222321948381_zh-CN.png)
+    ![选驱动](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518048381_zh-CN.png)
 
 5.  单击已分配的Modbus驱动，在设备列表右侧单击**驱动配置**。
-6.  在弹出窗口中单击**添加通道**。
+6.  在弹出窗口中单击**添加通道**。 通道是网关与具体物理设备之间的连接介质。
 
-    通道是网关与具体物理设备之间的连接介质。
+    ![添加通道](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518048436_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322048436_zh-CN.png)
-
-7.  根据界面提示设置参数，然后单击**确定**。
+    根据界面提示设置参数，然后单击**确定**。
 
     |参数|描述|
     |:-|:-|
@@ -54,49 +52,47 @@ Link IoT Edge提供C和Python语言Modbus驱动，同时根据CPU架构的不同
     |IP地址|输入点分十进制格式的地址。|
     |端口号|输入0~65535范围的整数。|
 
-8.  （可选）在设备列表右侧，单击**容器配置**，可参考[容器配置](https://help.aliyun.com/document_detail/85162.html#title-9kr-v8d-aj1)中的参数说明，对当前驱动进行容器配置。配置完成后单击**确定**。
+7.  （可选）在设备列表右侧，单击**容器配置**，根据[容器配置](https://help.aliyun.com/document_detail/85162.html#title-9kr-v8d-aj1)中的参数说明，对当前驱动进行容器配置。配置完成后单击**确定**。 
 
     **说明：** 仅在产品规格为专业版的边缘实例中，允许设置**容器配置**。
 
-9.  单击**分配子设备**，在Modbus驱动下为边缘实例分配设备。
-
-    您可以分配已有的Modbus设备，也可以根据如下步骤，新建Modbus设备。
+8.  单击**分配子设备**，在Modbus驱动下为边缘实例分配设备。 您可以分配已有的Modbus设备，也可以根据如下步骤，新建Modbus设备。
 
     **说明：** 分配已有的Modbus设备时，该设备所属产品必须接入网关，且接入网关协议为Modbus。详细说明请参见[创建产品](../../../../cn.zh-CN/用户指南/产品与设备/创建产品.md#)。
 
     1.  在右侧弹出的分配子设备页面中，单击**添加子设备**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156222322037903_zh-CN.png)
+        ![添加设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156618518037903_zh-CN.png)
 
     2.  在添加设备页面，单击**新建产品**，创建Modbus设备所属产品。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156222322037904_zh-CN.png)
+        ![创建产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156618518037904_zh-CN.png)
 
     3.  在创建产品页面设置参数后，单击**确认**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322048524_zh-CN.png)
+        ![创建产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518148524_zh-CN.png)
 
         |参数|描述|
         |--|--|
         |产品名称|设置产品名称，产品名称在账号内具有唯一性。|
-        |所属分类|选择品类，为该产品定义[物模型](cn.zh-CN/用户指南/产品与设备/物模型/概述.md#)。此处选择自定义品类。|
+        |所属分类|选择品类，为该产品定义[物模型](cn.zh-CN/用户指南/产品与设备/物模型/什么是物模型.md#)。此处选择自定义品类。|
         |接入网关协议|此处必须选择Modbus。|
 
     4.  在添加设备页面，产品自动分配已创建的产品，单击产品下的前往设置，为产品添加自定义功能。
 
-        **说明：** 您也可以通过Modbus调试功能，配置Modbus产品，详情请参见[Modbus调试工具](cn.zh-CN/用户指南/设备接入/官方驱动/Modbus调试工具.md#)。
+        **说明：** 您也可以使用[Modbus调试工具](cn.zh-CN/用户指南/设备接入/官方驱动/Modbus调试工具.md#)配置Modbus产品，但需要先完成添加设备并分配到边缘实例的操作，再使用调试工具。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322048540_zh-CN.png)
+        ![前往设置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518148540_zh-CN.png)
 
     5.  系统跳转到产品详情页面，在自定义功能右侧单击**添加功能**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322148541_zh-CN.png)
+        ![添加功能](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518148541_zh-CN.png)
 
     6.  在添加自定义功能窗口，设置属性参数后单击**新增扩展描述**，设置如下扩展描述。
 
         在配置物模型属性的过程中，设置**扩展描述**参数，将属性映射到寄存器中，官方Modbus驱动会将所有的属性聚合为Modbus数据请求，驱动收到Modbus数据之后再转换为物模型数据。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322148543_zh-CN.png)
+        ![扩展描述](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518148543_zh-CN.png)
 
         参数说明如下所示，详细的参数解释请参见[新增物模型](../../../../cn.zh-CN/用户指南/产品与设备/物模型/新增物模型.md#)中扩展描述的说明。
 
@@ -111,19 +107,18 @@ Link IoT Edge提供C和Python语言Modbus驱动，同时根据CPU架构的不同
         |交换寄存器内高低字节|此处设置为true。|
         |交换寄存器顺序|此处设置为false。|
         |缩放因子|指缩放系数，如采集的值为100， 但真实的值为10，因此需要缩放10倍，故缩放因子填写0.1即可。如放大10倍（即真实的值为1000），则放大因子为10。|
-        |采集间隔|无需设置该参数，保持默认值。|
         |数据上报方式|有两种数据上报方式。         -   按时上报：根据采集间隔指定的时间采集并上报。
         -   变更上报：采集后的值发生变化后才会上报。
  |
 
     7.  返回实例详情页面，添加Modbus设备。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322110264_zh-CN.png)
+        ![添加设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518210264_zh-CN.png)
 
     8.  将新建的Modbus设备分配到边缘实例。
-10. 分配设备到边缘实例后，单击设备名称对应操作栏中的**设备配置**，通过关联通道，关联设备与Modbus驱动。
+9.  分配设备到边缘实例后，单击设备名称对应操作栏中的**设备配置**，通过关联通道，关联设备与Modbus驱动。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156222322110269_zh-CN.png)
+    ![设备配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18136/156618518210269_zh-CN.png)
 
     |参数|描述|
     |--|--|
@@ -131,7 +126,7 @@ Link IoT Edge提供C和Python语言Modbus驱动，同时根据CPU架构的不同
     |从站号|从站号是Modbus设备标识信息，在同一个通道中是唯一的。|
     |采集间隔|Modbus协议是半双工协议，由网关主动请求数据，因此需要指定对数据点的采集间隔时间。单位为毫秒。 **说明：** 单个属性点的采集耗时时间大概为60毫秒（ms），则采集间隔的计算方式为：
 
-    ``` {#codeblock_vbq_6ix_cu9}
+    ``` {#codeblock_4q6_oly_iml}
 采集耗时时间(60 ms) * 该通道的所有属性点个数
     ```
 
@@ -141,6 +136,7 @@ Link IoT Edge提供C和Python语言Modbus驱动，同时根据CPU架构的不同
 
     至此，您已完成Modbus驱动的分配。
 
+10. （可选）在部署实例前，可以使用[Modbus调试工具](cn.zh-CN/用户指南/设备接入/官方驱动/Modbus调试工具.md#)，测试网关能否连接该Modbus设备，同时也可以测试Modbus设备所属产品的物模型是否配置正确。
 11. （可选）如果需要将设备数据展示在云端，则需要配置消息路由，详情请参见[设置消息路由](cn.zh-CN/用户指南/消息路由/设置消息路由.md#)。
 12. 在实例详情页面，单击右上角**部署**，重新部署边缘实例。
 
