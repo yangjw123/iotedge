@@ -21,11 +21,11 @@
     1.  单击**新增实例**，在弹出窗口中设置**实例名称**。
     2.  在**网关产品**后单击**新建网关产品**，为实例创建网关。 物联网边缘计算中的网关，承载边缘计算能力，每个实例必须分配一个网关设备，并且该网关设备同一时间只能被分配到一个边缘实例。
 
-        ![创建网关产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698169437158_zh-CN.png)
+        ![创建网关产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698192037158_zh-CN.png)
 
     3.  在新建产品页面中，设置网关产品参数，然后单击**完成**。 物联网边缘计算中的新建网关产品继承物联网平台 **设备管理** \> **产品**中的产品功能，已自动为您简化创建适合物联网边缘计算中使用的网关产品步骤。
 
-        ![创建产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698169437159_zh-CN.png)
+        ![创建产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698192037159_zh-CN.png)
 
         |参数|说明|
         |--|--|
@@ -46,7 +46,7 @@
 
     4.  在新增实例页面，单击**网关设备**后的**新建网关设备**为网关产品添加设备。 物联网边缘计算中的新建网关设备功能继承物联网平台 **设备管理** \> **设备**的功能。
 
-        ![新建网关设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698169537160_zh-CN.png)
+        ![新建网关设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698192037160_zh-CN.png)
 
     5.  根据界面提示设置参数后，单击**确认**。 
 
@@ -65,11 +65,11 @@
 
 1.  在左侧导航栏中选择**边缘计算** \> **边缘实例**，单击实例名称右侧的**下载**。 
 
-    ![下载命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698169544201_zh-CN.png)
+    ![下载命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698192044201_zh-CN.png)
 
 2.  根据环境设置下载参数，然后单击**生成命令**。 
 
-    ![下载命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103165/156698169545194_zh-CN.png)
+    ![下载命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103165/156698192045194_zh-CN.png)
 
     |参数|描述|
     |--|--|
@@ -80,7 +80,7 @@
 
 3.  复制操作系统命令备用。 
 
-    ![复制命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103165/156698169545201_zh-CN.png)
+    ![复制命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103165/156698192045201_zh-CN.png)
 
 4.  登录您的Windows7或Windows10系统的机器。
 5.  在git bash运行环境任意目录下执行步骤3中已复制的命令。 该命令实现一键下载、配置并启动Link IoT Edge。命令执行完成后，会在当前目录中下载link-iot-edge.sh脚本。
@@ -92,21 +92,21 @@
         -   确认是否卸载之前已安装的版本，默认卸载
         拉取Docker镜像完成并启动可能需要等待5 ~ 10分钟，启动完成后通过docker ps命令查看相关Docker容器是否已启动，若系统显示如下图所示信息，表示启动成功。
 
-        ![查看执行结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103165/156698169537204_zh-CN.png)
+        ![查看执行结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103165/156698192037204_zh-CN.png)
 
     -   如果不是第一次安装启动Link IoT Edge，可使用已下载的link-iot-edge.sh脚本，对Link IoT Edge进行重启、停止、获取状态、修改配置参数等操作，命令详情请见下图：
 
-        ![其他命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/156698169544849_zh-CN.png)
+        ![其他命令](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/156698192044849_zh-CN.png)
 
 6.  在[物联网控制台](http://iot.console.aliyun.com/)，选择 **边缘计算** \> **边缘实例**，在已创建好的边缘实例右侧单击**查看**进入**实例详情**页面，选择**网关**，查看网关状态。 
 
-    ![网关在线](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/156698169537203_zh-CN.png)
+    ![网关在线](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/103166/156698192037203_zh-CN.png)
 
 7.  （可选）在实例详情页面，查看CPU使用率、内存使用率、存储使用率以及实例进程需要授权访问阿里云云监控（CloudMonitor）服务。 
     1.  请根据[云资源访问](../cn.zh-CN/用户指南/云资源访问.md#)内容，添加角色或分配已有的角色，并为该角色添加**管理云监控（CloudMonitor）的权限**。
     2.  选择**设置**页签，在实例信息中打开**云监控状态**按钮，如下图所示。 
 
-        ![打开云监控](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698169537199_zh-CN.png)
+        ![打开云监控](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698192137199_zh-CN.png)
 
         云监控状态打开后，可在实例详情页面选择**监控信息**，查看网关的各类监控信息。
 
@@ -168,6 +168,6 @@
 1.  在实例详情页面，单击右上角**部署**后在弹出框中单击**确定**，部署边缘实例。
 2.  当部署状态显示为**部署成功**，表示部署实例完成。您可以单击**查看日志**，查看部署详情。 
 
-    ![查看部署日志](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698169646924_zh-CN.png)
+    ![查看部署日志](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/102593/156698192146924_zh-CN.png)
 
 
