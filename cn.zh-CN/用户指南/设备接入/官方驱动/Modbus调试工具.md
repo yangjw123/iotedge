@@ -5,7 +5,7 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 ## 前提条件 {#section_ozz_53n_jhb .section}
 
 -   请您确保已根据[环境搭建](cn.zh-CN/用户指南/环境搭建/专业版环境搭建/基于Ubuntu 16.04搭建环境.md#)内容创建完成边缘实例。
--   根据[Modbus驱动](cn.zh-CN/用户指南/设备接入/官方驱动/Modbus驱动.md#)中Modbus驱动使用步骤，为边缘实例分配Modbus驱动和子设备。
+-   根据[官方驱动](cn.zh-CN/用户指南/设备接入/官方驱动/Modbus驱动.md#)中Modbus驱动使用步骤，为边缘实例分配Modbus驱动和子设备。
 
 ## 操作步骤 {#section_c32_rnn_jhb .section}
 
@@ -16,12 +16,12 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
 3.  在**实例详情** \> **设备驱动配置**页面，选择**全部驱动**下的Modbus驱动，单击设备名称右侧的**调试**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156222327644172_zh-CN.png)
+    ![调试modbus设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156747668744172_zh-CN.png)
 
 4.  在通信通道调试页面，单击**添加属性点**，配置调试。
     -   线圈配置参数说明如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156222327644174_zh-CN.png)
+        ![通信通道调试](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156747668744174_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
@@ -47,7 +47,7 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
     -   寄存器配置参数说明如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156222327644177_zh-CN.png)
+        ![寄存器设置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156747668744177_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
@@ -82,7 +82,7 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
         -   false：使用大端序的解析方式。
  示例1，当写入12345时，对应的十六进制值为0x3039，当该功能设置为false时，发送/接收顺序为30 39；设置为true时，发送/接收顺序为39 30。
 
- 示例2，若使用0x10功能码向slaveID为1的从站发送写入保持寄存器的RTU报文，当该功能设置为false时，报文完整内容是：01 10 02 00 01 **30 39** F7 E1；设置为true时，报文完整内容是：01 10 02 00 01 **39 30** 33 14。
+ 示例2，若使用0x10功能码向slaveID为1的从站发送写入保持寄存器的RTU报文，当该功能设置为false时，报文完整内容是：01 10 02 00 01 30 39 F7 E1；设置为true时，报文完整内容是：01 10 02 00 01 39 30 33 14。
 
  |
         |交换寄存器|此开关控制解析寄存器的顺序（仅在除int16、uint16的数据类型中有效）。系统默认认为较高位的数值在较低地址的寄存器中，因此先解析较低地址的寄存器，即先发送较高位的数据。 例如，发送int64数据类型的数据：0x1234567890ABCDEF到设备端，会拆分成4个寄存器发送（假设上文中交换字节设置为false），当该功能设置为false时，发送顺序为12 34 56 78 90 AB CD EF；设置为true时，发送顺序为CD EF 90 AB 56 78 12 34。
