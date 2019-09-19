@@ -6,11 +6,11 @@ Link IoT Edge提供用于接入WebSocket通信协议设备的驱动。根据网�
 
 WebSocket驱动可以直接接受设备的接入，示意图如下所示。
 
-![WebSocket驱动直接设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156747673749749_zh-CN.png)
+![WebSocket驱动直接设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156889491349749_zh-CN.png)
 
 WebSocket驱动也可以通过网关接受设备的接入，示意图如下所示。
 
-![WebSocket驱动网关接设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156747673750381_zh-CN.png)
+![WebSocket驱动网关接设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156889491350381_zh-CN.png)
 
 ## 使用步骤 {#section_q4d_jsz_8hz .section}
 
@@ -18,15 +18,15 @@ WebSocket驱动也可以通过网关接受设备的接入，示意图如下所�
 2.  分配WebSocket驱动到边缘实例。 
     1.  在**边缘计算** \> **边缘实例**页面，选择已创建的边缘实例，单击右侧的**查看**。
     2.  在**实例详情**页面，选择设备驱动配置，单击**全部驱动**右侧的“`+`”图标 。
-    3.  在分配驱动弹出窗口中，根据网关CPU架构选择需要使用的WebSocket驱动，单击对应操作栏中的**分配**。然后单击**完成**。 
+    3.  在分配驱动对话框中，选择**官方驱动**并根据网关CPU架构选择需要使用的WebSocket驱动，单击对应操作栏中的**分配**。然后单击**完成**。 
 
         **说明：** WebSocket驱动，仅支持在v2.0.0及以上版本的Link IoT Edge中使用。
 
-        ![分配WebSocket驱动到实例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156747673749844_zh-CN.png)
+        ![分配WebSocket驱动到实例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156889491349844_zh-CN.png)
 
     4.  单击已分配的WebSocket驱动，在设备列表右侧单击**驱动配置**。 根据界面提示设置参数，然后单击**确定**。
 
-        ![驱动配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156747673849853_zh-CN.png)
+        ![驱动配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156889491349853_zh-CN.png)
 
         |参数|描述|
         |--|--|
@@ -41,13 +41,13 @@ WebSocket驱动也可以通过网关接受设备的接入，示意图如下所�
         **说明：** 仅在产品规格为专业版的边缘实例中，允许设置**容器配置**。
 
 3.  单击**分配子设备**，在WebSocket驱动下为边缘实例分配设备。 您可以分配已有的WebSocket设备，也可以根据如下步骤，新建WebSocket设备。
-    1.  在右侧弹出的分配子设备页面中，单击**添加子设备**。![添加子设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156747673837903_zh-CN.png)
+    1.  在右侧弹出的分配子设备对话框中，单击**添加子设备**。![添加子设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156889491337903_zh-CN.png)
 
 
-    2.  在添加设备页面，单击**新建产品**，创建WebSocket设备所属产品。![新增产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156747673837904_zh-CN.png)
+    2.  在添加设备对话框，单击**新建产品**，创建WebSocket设备所属产品。![新增产品](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/117119/156889491337904_zh-CN.png)
 
 
-    3.  在创建产品页面设置参数后，单击**确认**。 
+    3.  在创建产品对话框设置参数后，单击**确认**。 
 
         |参数|描述|
         |--|--|
@@ -55,11 +55,11 @@ WebSocket驱动也可以通过网关接受设备的接入，示意图如下所�
         |所属分类|选择品类，为该产品定义[物模型](cn.zh-CN/用户指南/产品与设备/物模型/什么是物模型.md#)。此处选择自定义品类。|
         |接入网关协议|此处必须选择自定义。|
 
-    4.  在添加设备页面，输入设备名称，添加WebSocket设备。
+    4.  在添加设备对话框，输入设备名称，添加WebSocket设备。
     5.  将新建的WebSocket设备**分配**到边缘实例。
     6.  分配设备到边缘实例后，单击设备名称对应操作栏中的**设备配置**，关联设备与WebSocket驱动。 
 
-        ![设备配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156747673850342_zh-CN.png)
+        ![设备配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/602307/156889491350342_zh-CN.png)
 
         设备IP：接入设备或设备所在网关的IP。
 
