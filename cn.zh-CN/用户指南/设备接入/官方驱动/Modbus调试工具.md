@@ -5,22 +5,22 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 -   请您确保已根据[环境搭建](cn.zh-CN/用户指南/环境搭建/专业版环境搭建/基于Ubuntu 16.04搭建环境.md#)内容创建完成边缘实例。
 -   根据[官方驱动](cn.zh-CN/用户指南/设备接入/官方驱动/Modbus驱动.md#)中Modbus驱动使用步骤，为边缘实例分配Modbus驱动和子设备。
 
-## 安装和使用（可选） {#section_ehh_2bv_tgb .section}
+## 操作步骤 {#section_ehh_2bv_tgb .section}
 
 1.  登录[物联网平台控制台](http://iot.console.aliyun.com)。
 2.  单击左侧导航栏中**边缘计算** \> **边缘实例**。 找到已分配Modbus设备的实例，单击对应操作栏中的**查看**。
 3.  在实例详情页面单击**设备驱动配置**页签，选择**全部驱动**下的Modbus驱动，单击设备名称右侧的**调试**。 
 
-    ![调试modbus设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156889289744172_zh-CN.png)
+    ![调试modbus设备](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156894702544172_zh-CN.png)
 
 4.  在通信通道调试页面，单击**添加属性点**，配置调试。 
     -   线圈配置参数说明如下：
 
-        ![通信通道调试](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156889289744174_zh-CN.png)
+        ![通信通道调试](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156894702544174_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
-        |地址|线圈的地址。十六进制，以`0x`开头。 根据您自己设备的属性地址设置线圈地址。例如，要调试温度属性，您设备的温度属性地址为1，则线圈地址可设置为0x1。
+        |地址|线圈的地址。十六进制，以`0x`开头。 根据您自己设备的属性地址设置线圈地址。例如，要调试温度属性，您设备的温度属性地址为1，则线圈地址可设置为`0x1`。
 
  |
         |属性名称|方便阅读的功能名称。 设置属性名称，并保存配置后，在该调试设备所属产品的产品详情页面功能定义页签自定义功能区域框中，**功能名称**一列中可看到已设置的属性名称。
@@ -44,13 +44,13 @@ Modbus调试工具用于测试网关能否连接指定的Modbus设备，同时�
 
     -   寄存器配置参数说明如下所示。
 
-        ![寄存器设置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156889289744177_zh-CN.png)
+        ![寄存器设置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/156231/156894702544177_zh-CN.png)
 
         |参数|描述|
         |:-|:-|
         |地址|属性的起始地址。十六进制，以`0x`开头。 **说明：** 添加多个配置项时寄存器地址不可重叠，若产生重叠，在保存配置时会提示配置异常。
 
- 根据您自己设备的属性地址设置寄存器地址。例如，要调试温度属性，您设备的温度属性地址为1，则寄存器地址可设置为0x1。
+ 根据您自己设备的属性地址设置寄存器地址。例如，要调试温度属性，您设备的温度属性地址为1，则寄存器地址可设置为`0x1`。
 
  |
         |属性名称|方便阅读的功能名称。|
